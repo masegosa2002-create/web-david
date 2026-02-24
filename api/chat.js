@@ -15,7 +15,7 @@ export default async function handler(req) {
             return new Response(JSON.stringify({ error: 'OpenAI API Key not configured' }), { status: 500 });
         }
 
-        const systemPrompt = `Eres NAZIBOT, el asistente inteligente de NAZBOT.
+        const systemPrompt = `Eres NAZBOT, el asistente inteligente de NAZBOT.
 Tu objetivo es ayudar a los usuarios interesados en automatización e IA Generativa.
 NAZBOT ofrece:
 1. Automatización de procesos (n8n, flujos comerciales, CRM).

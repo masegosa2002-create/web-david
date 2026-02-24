@@ -1726,8 +1726,23 @@ footer {
 }
 
 .arch-icon {
-  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
+  color: var(--nebula-violet);
   margin-bottom: var(--space-md);
+  filter: drop-shadow(0 0 10px var(--glow-violet));
+}
+
+.arch-icon.hot {
+  color: var(--nebula-hot);
+  filter: drop-shadow(0 0 12px var(--glow-pink));
+}
+
+.arch-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .arch-card h3 {
@@ -1761,8 +1776,81 @@ footer {
 }
 
 .arch-list li::before {
-  content: '>';
+  content: '⌞';
   opacity: 0.5;
+  color: var(--nebula-hot);
+}
+
+.arch-card-featured {
+  border-color: rgba(136, 51, 255, 0.4);
+  background: linear-gradient(135deg, rgba(8, 8, 28, 0.8), rgba(136, 51, 255, 0.05));
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.arch-card-featured::after {
+  content: 'TOP PROTOCOL';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: var(--nebula-hot);
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+/* n8n Flow Visual */
+.n8n-flow-visual {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-md);
+  position: relative;
+}
+
+.flow-line {
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(90deg, var(--nebula-violet), transparent);
+  opacity: 0.3;
+}
+
+.flow-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.flow-dots .dot {
+  width: 4px;
+  height: 4px;
+  background: var(--nebula-violet);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--nebula-violet);
+  animation: flow-pulse 1.5s infinite;
+}
+
+.flow-dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.flow-dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes flow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
 }
 
 .system-showcase {

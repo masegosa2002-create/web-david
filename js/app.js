@@ -653,7 +653,7 @@ function initROICalculator() {
 
 
 /* ══════════════════════════════════════════════════════════
-   CHATBOT (NAZIBOT)
+   CHATBOT (NAZBOT)
    ══════════════════════════════════════════════════════════ */
 function initChatbot() {
   const container = document.getElementById('chatbot-container');
@@ -698,7 +698,7 @@ function initChatbot() {
     // Show typing indicator
     const typingIndicator = document.createElement('div');
     typingIndicator.className = 'typing';
-    typingIndicator.textContent = 'NAZIBOT está pensando...';
+    typingIndicator.textContent = 'NAZBOT está pensando...';
     messagesArea.appendChild(typingIndicator);
     scrollToBottom();
 
