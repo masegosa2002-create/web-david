@@ -1,0 +1,5 @@
+.DS_Store
+.vercel
+node_modules
+NAZBOT_WEB_INSTRUCCIONES_V2.md
+*.log

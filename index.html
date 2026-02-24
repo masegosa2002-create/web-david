@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAZBOT — Automatización · Web 3D · IA Generativa</title>
+  <meta name="description"
+    content="Agencia de automatización, diseño web 3D e IA generativa. Flujos inteligentes, sitios que no se olvidan, contenido visual IA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Rajdhani:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Scarcity Banner -->
+  <div id="availability-banner">
+    <span>⚡ Plazas de onboarding en mayo: <strong>2 disponibles</strong>.
+      <a href="#contacto" data-page="home">Reserva tu diagnóstico gratuito →</a>
+    </span>
+    <button id="banner-close" aria-label="Cerrar aviso">✕</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo" data-page="home">NAZBOT</a>
+    <div class="nav-links">
+      <a href="#automatizacion" data-page="automatizacion">Automatización</a>
+      <a href="#web3d" data-page="web3d">Web 3D</a>
+      <a href="#ia-media" data-page="ia-media">IA Generativa</a>
+    </div>
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Cambiar tema"
+        style="background:none; border:1px solid var(--star-dim); color:var(--star-white); width:32px; height:32px; cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; margin-right:10px;">☾</button>
+      <a href="#contacto" class="btn-primary btn-sm">Llamada gratuita →</a>
+    </div>
+  </nav>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor"></div>
+
+  <!-- Particle Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Sticky CTA Bar -->
+  <div id="sticky-cta">
+    <span>¿Listo para automatizar?</span>
+    <a href="#contacto" class="btn-primary btn-sm" data-page="home">Reserva llamada gratuita →</a>
+    <a href="https://wa.me/34659426999" class="btn-secondary btn-sm" target="_blank" rel="noopener">WhatsApp directo</a>
+  </div>
+
+  <!-- Warp Transition Overlay -->
+  <div id="warp-overlay"></div>
+
+  <!-- Main Content (SPA) -->
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════ HOME PAGE ═══ -->
+    <div id="page-home" class="page active">
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <p class="hero-pre">Automatización · Web 3D · IA Generativa</p>
+          <h1 class="logo-text" data-text="NAZBOT">NAZBOT</h1>
+          <p class="hero-sub">Automatización · Web 3D · IA Generativa</p>
+          <p class="hero-tagline">Las empresas que automatizan ahora crecen 3× más rápido.<br>Las que no, contratan más
+            personal para hacer lo mismo.</p>
+          <div class="hero-ctas">
+            <a href="#automatizacion" class="btn-primary" data-page="automatizacion">Explorar Servicios</a>
+            <button class="btn-secondary" id="scroll-to-services">Ver cómo funciona ↓</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Integration Ticker -->
+      <div class="integration-ticker">
+        <div class="ticker-track">
+          <span>n8n</span><span class="dot">·</span><span>WhatsApp API</span><span class="dot">·</span>
+          <span>Three.js</span><span class="dot">·</span><span>GSAP</span><span class="dot">·</span>
+          <span>OpenAI</span><span class="dot">·</span><span>Anthropic</span><span class="dot">·</span>
+          <span>ElevenLabs</span><span class="dot">·</span><span>Google Workspace</span><span class="dot">·</span>
+          <span>Notion</span><span class="dot">·</span><span>Stripe</span><span class="dot">·</span>
+          <span>HubSpot</span><span class="dot">·</span><span>Redis</span><span class="dot">·</span>
+          <span>Runway Gen-3</span><span class="dot">·</span><span>Midjourney</span><span class="dot">·</span>
+          <span>Airtable</span><span class="dot">·</span><span>Make</span><span class="dot">·</span>
+          <!-- Duplicado para loop continuo -->
+          <span>n8n</span><span class="dot">·</span><span>WhatsApp API</span><span class="dot">·</span>
+          <span>Three.js</span><span class="dot">·</span><span>GSAP</span><span class="dot">·</span>
+          <span>OpenAI</span><span class="dot">·</span><span>Anthropic</span><span class="dot">·</span>
+          <span>ElevenLabs</span><span class="dot">·</span><span>Google Workspace</span><span class="dot">·</span>
+          <span>Notion</span><span class="dot">·</span><span>Stripe</span><span class="dot">·</span>
+          <span>HubSpot</span><span class="dot">·</span><span>Redis</span><span class="dot">·</span>
+          <span>Runway Gen-3</span><span class="dot">·</span><span>Midjourney</span><span class="dot">·</span>
+          <span>Airtable</span><span class="dot">·</span><span>Make</span>
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <section id="servicios" class="services-section">
+        <div class="container">
+          <h2 class="section-title">SERVICIOS</h2>
+          <div class="services-grid">
+
+            <div class="service-card gsap-reveal">
+              <div class="card-number">01</div>
+              <h3>Automatización<br>de Procesos</h3>
+              <p>Flujos inteligentes que trabajan mientras duermes.</p>
+              <ul>
+                <li>Tu negocio responde a las 3am — sin ti</li>
+                <li>Leads al CRM solos. Sin copiar y pegar</li>
+                <li>Citas confirmadas automáticamente. –70% pérdidas</li>
+                <li>Campañas de re-activación en piloto automático</li>
+              </ul>
+              <div class="data-readout">STATUS: ACTIVE | WORKFLOWS: 47+ | UPTIME: 99.7%</div>
+              <a href="#automatizacion" class="btn-secondary" data-page="automatizacion">Ver más →</a>
+            </div>
+
+            <div class="service-card gsap-reveal">
+              <div class="card-number">02</div>
+              <h3>Diseño Web 3D<br>Interactivo</h3>
+              <p>Experiencias, no páginas. Sitios que no se olvidan.</p>
+              <ul>
+                <li>Visitantes que se quedan 4× más tiempo</li>
+                <li>3D en el navegador, sin apps ni plugins</li>
+                <li>Animaciones que hacen sentir el producto</li>
+                <li>Conversión A/B optimizada en packs avanzados</li>
+              </ul>
+              <div class="data-readout">RENDER: WebGL 2.0 | FPS: 60 | ELEMENTS: 3D+2D</div>
+              <a href="#web3d" class="btn-secondary" data-page="web3d">Ver más →</a>
+            </div>
+
+            <div class="service-card gsap-reveal">
+              <div class="card-number">03</div>
+              <h3>IA Generativa<br>Imagen &amp; Video</h3>
+              <p>Contenido visual profesional. Coste: –95%.</p>
+              <ul>
+                <li>50 imágenes de producto en 24 horas</li>
+                <li>Spots para Instagram, TikTok y YouTube Ads</li>
+                <li>Avatares que nunca enferman ni se van de vacaciones</li>
+                <li>Pack mensual para equipos de marketing</li>
+              </ul>
+              <div class="data-readout">MODELS: 12 | OUTPUT: 4K | LATENCY: &lt;24h</div>
+              <a href="#ia-media" class="btn-secondary" data-page="ia-media">Ver más →</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="how-it-works">
+        <div class="container">
+          <h2 class="section-title">CÓMO TRABAJAMOS</h2>
+          <div class="steps-grid">
+            <div class="step-item gsap-reveal">
+              <div class="step-num">01</div>
+              <h4>Diagnóstico gratuito</h4>
+              <p>Llamada de 30 min. Analizamos tu negocio y detectamos qué se puede automatizar ahora mismo.</p>
+            </div>
+            <div class="step-item gsap-reveal">
+              <div class="step-num">02</div>
+              <h4>Propuesta en 48h</h4>
+              <p>Plan detallado con herramientas, tiempos y ROI estimado. Sin letra pequeña.</p>
+            </div>
+            <div class="step-item gsap-reveal">
+              <div class="step-num">03</div>
+              <h4>Implementación iterativa</h4>
+              <p>Construimos por fases. Ves resultados desde la primera semana.</p>
+            </div>
+            <div class="step-item gsap-reveal">
+              <div class="step-num">04</div>
+              <h4>Soporte continuo</h4>
+              <p>Monitorizamos, optimizamos y escalamos. Tu sistema mejora solo con el tiempo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-home -->
+
+    <!-- ═══════════════════════════════ AUTOMATIZACION PAGE ═══ -->
+    <div id="page-automatizacion" class="page">
+
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="hero-pre"><a href="#" data-page="home">Inicio</a> / Automatización</p>
+          <h1>AUTOMATIZA.<br>ESCALA.<br>DUERME.</h1>
+          <p class="subpage-tagline">Un empleado a tiempo completo cuesta 2,000€/mes.<br>
+            Un sistema de automatización que hace el mismo trabajo: desde 497€.<br>
+            La pregunta no es si puedes permitirte automatizar —<br>
+            <strong>es si puedes permitirte no hacerlo.</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- ROI Calculator -->
+      <section class="roi-section gsap-reveal">
+        <div class="container">
+          <h2 class="section-title">CALCULA EL DINERO QUE ESTÁS PERDIENDO CADA MES</h2>
+          <div class="roi-calculator">
+            <div class="calc-controls">
+              <div class="calc-field">
+                <label>Horas semanales en tareas manuales: <span id="hours-val">10</span>h</label>
+                <input type="range" id="roi-hours" min="1" max="40" value="10" aria-label="Horas semanales">
+              </div>
+              <div class="calc-field">
+                <label>Coste por hora de empleado: <span id="rate-val">15</span>€/h</label>
+                <input type="range" id="roi-rate" min="8" max="60" value="15" aria-label="Coste hora">
+              </div>
+              <div class="calc-field">
+                <label>Nº de empleados en estas tareas: <span id="hc-val">2</span></label>
+                <input type="range" id="roi-headcount" min="1" max="20" value="2" aria-label="Número empleados">
+              </div>
+            </div>
+            <div id="roi-result" class="roi-result">
+              <p class="roi-loss">Estás tirando a la basura <strong id="roi-monthly">0€</strong>/mes.</p>
+              <p class="roi-gain">Con NAZBOT desde 497€/mes → Recuperas tu inversión <strong id="roi-ratio">0×</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture Grid -->
+      <section class="auto-architecture">
+        <div class="container">
+          <div class="auto-arch-grid">
+
+            <div class="arch-card gsap-reveal">
+              <div class="arch-icon">🤖</div>
+              <h3>AI AGENTS & ORCHESTRATION</h3>
+              <p>No son simples bots. Son agentes con memoria (Redis) que acceden a tus bases de datos para dar
+                respuestas precisas y cerrar ventas.</p>
+              <ul class="arch-list">
+                <li>Personalización dinámica</li>
+                <li>Memoria a largo plazo</li>
+                <li>Acción multi-paso</li>
+              </ul>
+            </div>
+
+            <div class="arch-card gsap-reveal">
+              <div class="arch-icon">⚡</div>
+              <h3>N8N PROTOCOLS</h3>
+              <p>Conectamos tu stack actual. Leads de Meta → CRM → WhatsApp → Calendario. Todo en una secuencia blindada
+                y rápida.</p>
+              <div class="n8n-flow-code mini">
+                <pre><code>[Lead] → [IA Analysis] → [CRM Update] → [WA Blast]</code></pre>
+              </div>
+            </div>
+
+            <div class="arch-card gsap-reveal">
+              <div class="arch-icon">📊</div>
+              <h3>DATA PIPELINES</h3>
+              <p>Tus datos trabajan para ti. Dashboards automáticos que te dicen qué está pasando en tu negocio en
+                tiempo real.</p>
+              <ul class="arch-list">
+                <li>Analytics en vivo</li>
+                <li>Alertas inteligentes</li>
+                <li>Reportes automáticos</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced System Showcase -->
+      <section class="system-showcase">
+        <div class="container gsap-reveal">
+          <div class="showcase-box">
+            <div class="showcase-content">
+              <span>ESTRATEGIA: THE LEAD MACHINE</span>
+              <h2>RECUPERA EL 80% DEL TIEMPO EN SEGUIMIENTOS</h2>
+              <p>No pierdas leads por falta de respuesta. Nuestro sistema detecta la intención de compra y cualifica al
+                usuario antes de que tú abras el chat.</p>
+              <div class="showcase-stats">
+                <div class="stat-item"><strong>99.9%</strong><span>Uptime Sistema</span></div>
+                <div class="stat-item"><strong>-40h</strong><span>Gestionadas / mes</span></div>
+                <div class="stat-item"><strong>2.5x</strong><span>Ventas Cerradas</span></div>
+              </div>
+            </div>
+            <div class="showcase-visual">
+              <div class="flow-diagram">
+                <div class="flow-node trigger">NUEVO LEAD</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node analysis">IA: Detecta Intención de Compra</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-row">
+                  <div class="flow-branch">
+                    <div class="flow-node hot">Caliente →<br>WhatsApp Inmediato</div>
+                  </div>
+                  <div class="flow-branch">
+                    <div class="flow-node cold">Frío →<br>Secuencia Nurturing</div>
+                  </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node crm">CRM: Actualiza Estado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title">LO QUE DICEN NUESTROS CLIENTES</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"En 6 semanas pasamos de 14 citas perdidas/semana a 2. Son 12 citas × 85€ = 1,020€/semana recuperados.
+                El sistema se pagó solo en el primer mes."</p>
+              <div class="testimonial-author">
+                <strong>María González</strong>
+                <span>Directora General · Clínica Dental Centro Madrid (38 empleados)</span>
+                <span class="since">Cliente desde marzo 2024 · 11 meses activo</span>
+              </div>
+            </div>
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"Automatizamos inscripciones, recordatorios de clase y cobros. Ahorré 23 horas semanales. Eso es casi
+                un sueldo a media jornada."</p>
+              <div class="testimonial-author">
+                <strong>Carlos Fuentes</strong>
+                <span>Fundador · Academia de Inglés Speak Fast Online</span>
+                <span class="since">Cliente desde julio 2024 · 7 meses activo</span>
+              </div>
+            </div>
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"ROI en 2 meses. Los leads que antes se perdían por falta de seguimiento ahora se convierten solos.
+                Ingresamos 8,400€ más en el primer trimestre."</p>
+              <div class="testimonial-author">
+                <strong>Ana Belén Ríos</strong>
+                <span>Socia · Ríos &amp; Asociados Consultoría Jurídica (12 empleados)</span>
+                <span class="since">Cliente desde enero 2024 · 13 meses activo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="pricing-section">
+        <div class="container">
+          <h2 class="section-title">LOGRA EL MÁXIMO IMPACTO</h2>
+          <div class="pricing-grid">
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">SETUP BASE</div>
+              <div class="plan-price">Consultar Presupuesto</div>
+              <ul class="pricing-list-new">
+                <li>Auditoría de Procesos</li>
+                <li>Setup n8n (Self-hosted/Cloud)</li>
+                <li>Conexión CRM + Web</li>
+                <li>1 Workflow de Captación Pro</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Agendar Auditoría →</a>
+            </div>
+
+            <div class="pricing-card pricing-featured gsap-reveal">
+              <div class="popular-badge">EL ESTÁNDAR 2026</div>
+              <div class="plan-name">SOLUCIÓN COMPLETA</div>
+              <div class="plan-price">Consultar Presupuesto</div>
+              <ul class="pricing-list-new">
+                <li>Ecosistema Integral (n8n + AI)</li>
+                <li>Chatbot con Memoria (Redis)</li>
+                <li>Automatización de Ventas</li>
+                <li>Dashboard de Resultados</li>
+                <li>1 Mes de Optimización Gratis</li>
+              </ul>
+              <a href="#contacto" class="btn-primary" data-page="home">Quiero mi sistema →</a>
+            </div>
+
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">MANTENIMIENTO</div>
+              <div class="plan-price">Consultar Tarifa</div>
+              <ul class="pricing-list-new">
+                <li>Monitorización 24/7</li>
+                <li>Mejora Continua de IA</li>
+                <li>Soporte Técnico Prioritario</li>
+                <li>Nuevos Flujos (bajo demanda)</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Saber más →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>¿Qué pasa si n8n deja de funcionar?</summary>
+              <p>n8n tiene un uptime del 99.9%. Además, todos los workflows críticos incluyen notificaciones de alerta y
+                fallback por email. Monitorizamos en tiempo real con dashboard de observabilidad.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Puedo cancelar el contrato mensual en cualquier momento?</summary>
+              <p>Sí. Sin permanencia. Cancela con 7 días de preaviso y te entregamos toda la documentación y accesos
+                para que puedas continuar por tu cuenta.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Tengo que saber programar para usarlo?</summary>
+              <p>No. El sistema funciona solo. Recibes un dashboard visual donde ves cada workflow, cada mensaje enviado
+                y cada resultado. Sin código.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Funciona con mi CRM actual?</summary>
+              <p>n8n tiene integraciones nativas con HubSpot, Pipedrive, Salesforce, Zoho, Monday.com y más de 500
+                herramientas. Si usas algo más específico, lo construimos.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Cuánto tiempo lleva la implementación inicial?</summary>
+              <p>Un flujo sencillo (recordatorio de citas + CRM) tarda 3-5 días laborables. Una arquitectura completa
+                con chatbot y múltiples flujos: 2-3 semanas.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-automatizacion -->
+
+    <!-- ═══════════════════════════════════════ WEB3D PAGE ═══ -->
+    <div id="page-web3d" class="page">
+
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="hero-pre"><a href="#" data-page="home">Inicio</a> / Diseño Web 3D</p>
+          <h1>WEB QUE<br>NO SE<br>OLVIDA.</h1>
+          <p class="subpage-tagline">Experiencias digitales que convierten visitantes en clientes enamorados.<br>
+            Los sitios con elementos 3D retienen al usuario 4.2 minutos vs. 54 segundos en webs estáticas.<br>
+            <strong>¿Cuántos leads estás perdiendo por tener una web aburrida?</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="subpage-services">
+        <div class="container">
+          <div class="service-detail gsap-reveal">
+            <div class="service-num">01</div>
+            <div class="service-body">
+              <h3>Diferenciación Radical</h3>
+              <p>Olvídate de las webs que parecen clones. Creamos una identidad visual inmersiva que separa a tu marca
+                de la competencia en el primer segundo de carga.</p>
+            </div>
+          </div>
+          <div class="service-detail gsap-reveal">
+            <div class="service-num">02</div>
+            <div class="service-body">
+              <h3>Retención Hipnótica</h3>
+              <p>Nuestras experiencias interactivas mantienen al usuario fascinado. Logramos que tus clientes pasen 4
+                veces más tiempo en tu web, aumentando drásticamente la probabilidad de venta.</p>
+            </div>
+          </div>
+          <div class="service-detail gsap-reveal">
+            <div class="service-num">03</div>
+            <div class="service-body">
+              <h3>Prestigio Instantáneo</h3>
+              <p>Una web 3D no solo vende; posiciona a tu empresa como líder tecnológico. Es el equivalente digital a
+                tener una oficina en la planta más alta del rascacielos más emblemático.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Discovery Flow Diagram -->
+      <section class="experience-flow-section gsap-reveal">
+        <div class="container">
+          <div class="showcase-box">
+            <div class="showcase-content">
+              <span>EL VIAJE DEL CLIENTE</span>
+              <h2>DE LA INDIFERENCIA A LA FASCINACIÓN</h2>
+              <p>Mapeamos cada interacción para que el usuario sienta el valor de tu producto antes incluso de leer la
+                primera palabra.</p>
+              <div class="showcase-stats">
+                <div class="stat-item"><strong>+300%</strong><span>Tiempo en Página</span></div>
+                <div class="stat-item"><strong>-45%</strong><span>Tasa de Rebote</span></div>
+                <div class="stat-item"><strong>Top 1%</strong><span>Encuadre Web</span></div>
+              </div>
+            </div>
+            <div class="showcase-visual">
+              <div class="flow-diagram">
+                <div class="flow-node trigger">Entrada Aburrida (Antigua Web)</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node analysis">Efecto "WOW" Inmersivo</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node hot">Fascinación e Interacción</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node crm">Confianza Total / VENTA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="tech-stack-section">
+        <div class="container">
+          <h2 class="section-title">STACK TECNOLÓGICO</h2>
+          <div class="tech-stack-grid">
+            <div class="tech-item">Three.js</div>
+            <div class="tech-item">WebGL 2.0</div>
+            <div class="tech-item">GSAP + ScrollTrigger</div>
+            <div class="tech-item">HTML5 Canvas</div>
+            <div class="tech-item">CSS Custom Properties</div>
+            <div class="tech-item">Intersection Observer</div>
+            <div class="tech-item">Web Animations API</div>
+            <div class="tech-item">Svelte / Vanilla JS</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title">RESULTADOS REALES</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"Nuestra conversión subió un 34% solo cambiando la landing page. El diseño 3D genera confianza
+                instantánea. En 3 meses recuperamos 10× la inversión."</p>
+              <div class="testimonial-author">
+                <strong>David Morales</strong>
+                <span>CEO · StartupTech Barcelona (Serie A, 45 empleados)</span>
+                <span class="since">Cliente desde febrero 2024</span>
+              </div>
+            </div>
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"Mi portfolio ahora para la respiración a quien lo ve. Los clientes me dicen que parece una agencia de
+                lujo. He triplicado mis presupuestos medios."</p>
+              <div class="testimonial-author">
+                <strong>Laura Vidal</strong>
+                <span>Fotógrafa profesional · Studio LV</span>
+                <span class="since">Cliente desde agosto 2024</span>
+              </div>
+            </div>
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"Mis proyectos en 3D en la web. Antes imposible sin un equipo enorme. Cerré 2 proyectos de 150k€
+                directamente desde la web en el primer mes."</p>
+              <div class="testimonial-author">
+                <strong>Miguel Ángel Torres</strong>
+                <span>Arquitecto · Torres &amp; Partners</span>
+                <span class="since">Cliente desde octubre 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="pricing-section">
+        <div class="container">
+          <h2 class="section-title">INVERSIÓN</h2>
+          <div class="pricing-grid">
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">LANDING PAGE</div>
+              <div class="plan-price">Consultar</div>
+              <ul>
+                <li>Diseño custom + desarrollo</li>
+                <li>Responsive mobile/tablet</li>
+                <li>GSAP animations</li>
+                <li>Entrega en 10 días</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Pedir presupuesto →</a>
+            </div>
+            <div class="pricing-card pricing-featured gsap-reveal">
+              <div class="popular-badge">MÁS POPULAR</div>
+              <div class="plan-name">WEB CORPORATIVA</div>
+              <div class="plan-price">Consultar</div>
+              <ul>
+                <li>+ Hasta 8 páginas</li>
+                <li>+ CMS headless</li>
+                <li>+ SEO técnico</li>
+                <li>+ 1 mes soporte incluido</li>
+              </ul>
+              <a href="#contacto" class="btn-primary" data-page="home">Quiero una propuesta →</a>
+            </div>
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">WEB 3D INTERACTIVA</div>
+              <div class="plan-price">Consultar</div>
+              <ul>
+                <li>Three.js / WebGL</li>
+                <li>Robot / mascota interactiva</li>
+                <li>Partículas y efectos 3D</li>
+                <li>Mantenimiento: Consultar</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Hablemos esta semana →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="pricing-section">
+        <div class="container">
+          <h2 class="section-title">PAQUETES WEB 3D</h2>
+          <div class="pricing-grid">
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">WEB 3D BASE</div>
+              <div class="plan-price">Consultar Presupuesto</div>
+              <ul class="pricing-list-new">
+                <li>Diseño Interactivo 3D</li>
+                <li>Optimización de Carga Ultra</li>
+                <li>Animaciones con GSAP</li>
+                <li>Hosting 1 Año Gratis</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Pedir Presupuesto →</a>
+            </div>
+
+            <div class="pricing-card pricing-featured gsap-reveal">
+              <div class="popular-badge">EL MÁS BUSCADO</div>
+              <div class="plan-name">CATÁLOGO 3D PRO</div>
+              <div class="plan-price">Consultar Presupuesto</div>
+              <ul class="pricing-list-new">
+                <li>Experiencia Multi-Página</li>
+                <li>Modelado 3D de Productos</li>
+                <li>Micro-interacciones Pro</li>
+                <li>Soporte Rendimiento 4K</li>
+              </ul>
+              <a href="#contacto" class="btn-primary" data-page="home">Quiero mi web 3D →</a>
+            </div>
+
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">CORPORATIVO ELITE</div>
+              <div class="plan-price">Consultar</div>
+              <ul class="pricing-list-new">
+                <li>Desarrollo a Medida</li>
+                <li>WebGL de Alta Gama</li>
+                <li>Escenas Dinámicas</li>
+                <li>SLA de Mantenimiento VIP</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Hablemos →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>¿Los sitios 3D cargan bien en móvil?</summary>
+              <p>Sí. Implementamos degradación progresiva: en mobile se desactivan los efectos 3D más pesados pero se
+                mantiene todo el contenido y la estética.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Afecta el 3D al posicionamiento SEO?</summary>
+              <p>No, si se hace bien. El contenido textual es indexable, los efectos visuales son decorativos. Nuestros
+                sitios obtienen puntuaciones altas en Core Web Vitals.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Podré actualizar el contenido yo solo?</summary>
+              <p>Sí. En packs Corporativo e Inmersivo incluimos un CMS headless. Actualiza textos, imágenes y productos
+                sin tocar código.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Qué incluye el mantenimiento mensual?</summary>
+              <p>Actualizaciones de seguridad, backups automáticos, soporte técnico y hosting gestionado opcional.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-web3d -->
+
+    <!-- ═══════════════════════════════════════ IA-MEDIA PAGE ═══ -->
+    <div id="page-ia-media" class="page">
+
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="hero-pre"><a href="#" data-page="home">Inicio</a> / IA Generativa</p>
+          <h1>EL FUTURO<br>DEL CONTENIDO<br>ES HOY.</h1>
+          <p class="subpage-tagline">Tu competencia ya genera contenido con IA.<br>
+            ¿Cuántas ventas has perdido esta semana porque tus fotos de producto no están a la altura?<br>
+            <strong>Coste de producción tradicional: 5,000€. Con IA: desde 299€.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="ia-studio-grid">
+        <div class="container">
+          <div class="studio-card large gsap-reveal">
+            <div class="studio-content">
+              <span>01 / VIDEO PRODUCTION</span>
+              <h3>Cinematic AI Ads</h3>
+              <p>Spots de 15 a 30 segundos con calidad de cine. Generamos el guion, la voz (ElevenLabs), la música y
+                visuales ultra-realistas (Runway Gen-3 / Sora).</p>
+              <div class="studio-tags">
+                <span class="tag">4K Output</span>
+                <span class="tag">Voice Cloning</span>
+                <span class="tag">Dynamic Cut</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="studio-row">
+            <div class="studio-card gsap-reveal">
+              <div class="studio-content">
+                <span>02 / PHOTOGRAPHY</span>
+                <h3>Hyper-Real Product</h3>
+                <p>Tu producto en cualquier escenario imaginable. Fondos premium sin fotógrafo.</p>
+              </div>
+            </div>
+            <div class="studio-card gsap-reveal">
+              <div class="studio-content">
+                <span>03 / HUMANIZED IA</span>
+                <h3>Virtual Spokespersons</h3>
+                <p>Avatares con sincronización labial perfecta en 30+ idiomas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Machine Banner -->
+      <section class="content-machine-banner gsap-reveal">
+        <div class="container">
+          <div class="machine-box">
+            <h2>CONTENT MACHINE</h2>
+            <p>Hacemos el trabajo de un equipo de 5 personas en 48 horas. Pack mensual de activos listos para publicar.
+            </p>
+            <a href="#contacto" class="btn-primary">Reservar Mi Pack de Contenido →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="tech-stack-section">
+        <div class="container">
+          <h2 class="section-title">HERRAMIENTAS</h2>
+          <div class="tech-stack-grid">
+            <div class="tech-item">Midjourney v6</div>
+            <div class="tech-item">Runway Gen-3</div>
+            <div class="tech-item">ElevenLabs</div>
+            <div class="tech-item">Kling AI</div>
+            <div class="tech-item">Stable Diffusion XL</div>
+            <div class="tech-item">HeyGen</div>
+            <div class="tech-item">Sora</div>
+            <div class="tech-item">Adobe Firefly</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title">RESULTADOS REALES</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"Antes pagaba 2,000€ por sesión fotográfica. 4 días de producción, fotógrafo, estudio. Ahora tengo 50
+                imágenes en 24 horas por 299€. Mi CTR publicitario subió un 180%."</p>
+              <div class="testimonial-author">
+                <strong>Inés Carbonell</strong>
+                <span>Fundadora · Maison Carbonell (e-commerce moda, 18 empleados)</span>
+                <span class="since">Cliente desde abril 2024</span>
+              </div>
+            </div>
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"Los videos de mis platos para Instagram generaron 43 reservas en la primera semana. Calidad visual que
+                antes era imposible con mi presupuesto."</p>
+              <div class="testimonial-author">
+                <strong>Roberto Sanz</strong>
+                <span>Propietario · Restaurante El Mirador Madrid</span>
+                <span class="since">Cliente desde septiembre 2024</span>
+              </div>
+            </div>
+            <div class="testimonial gsap-reveal">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p>"El avatar de nuestro canal de YouTube es indistinguible de una persona real. De 0 a 8,400 suscriptores
+                en 6 meses. Sin grabar un solo video."</p>
+              <div class="testimonial-author">
+                <strong>Patricia Doval</strong>
+                <span>Directora de Marketing · FinTech Scale (80 empleados)</span>
+                <span class="since">Cliente desde noviembre 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="pricing-section">
+        <div class="container">
+          <h2 class="section-title">PAQUETES DE CONTENIDO IA</h2>
+          <div class="pricing-grid">
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">STARTER PACK</div>
+              <div class="plan-price">Consultar Presupuesto</div>
+              <ul class="pricing-list-new">
+                <li>10 Fotos de Producto IA</li>
+                <li>2 Spots de Video (15s)</li>
+                <li>Voz en Off Premium</li>
+                <li>Entrega en 48h</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Pedir mi pack →</a>
+            </div>
+
+            <div class="pricing-card pricing-featured gsap-reveal">
+              <div class="popular-badge">MÁQUINA DE CONTENIDO</div>
+              <div class="plan-name">CONTENT PRO</div>
+              <div class="plan-price">Consultar Tarifa</div>
+              <ul class="pricing-list-new">
+                <li>30 Fotos de Producto IA</li>
+                <li>8 Spots de Video (Reels/TikTok)</li>
+                <li>Avatares Sincronizados (x2)</li>
+                <li>Variaciones de Copy IA</li>
+              </ul>
+              <a href="#contacto" class="btn-primary" data-page="home">Quiero cada minuto →</a>
+            </div>
+
+            <div class="pricing-card gsap-reveal">
+              <div class="plan-name">ESTRATEGIA ELITE</div>
+              <div class="plan-price">Consultar</div>
+              <ul class="pricing-list-new">
+                <li>Producción Ilimitada</li>
+                <li>Modelos IA Propios (x5)</li>
+                <li>Estrategia de Embudos</li>
+                <li>Soporte VIP 24/7</li>
+              </ul>
+              <a href="#contacto" class="btn-secondary" data-page="home">Contactar →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>¿Las imágenes IA tienen derechos comerciales?</summary>
+              <p>Sí. Todos los entregables incluyen licencia comercial completa. Puedes usarlos en publicidad,
+                packaging, redes sociales y e-commerce sin restricciones.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Cuánto se tarda en tener las primeras imágenes?</summary>
+              <p>Las primeras muestras llegan en 24-48 horas desde que nos mandas referencias y brief. El pack completo
+                del mes en máximo 5 días laborables.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿El avatar puede hablar en varios idiomas?</summary>
+              <p>Sí. Los avatares HeyGen y ElevenLabs admiten más de 30 idiomas con sincronización labial perfecta.
+                Ideal para marcas con presencia internacional.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Se nota que es IA?</summary>
+              <p>Con los modelos de 2025, la diferencia es mínima en imágenes y prácticamente imperceptible en avatares
+                de alta gama. Revisamos cada entregable antes de enviarlo.</p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Puedo cancelar el plan mensual?</summary>
+              <p>Sí. Sin permanencia ni penalización. Cancela cuando quieras con 7 días de preaviso. Todos los activos
+                generados son tuyos.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-ia-media -->
+
+  </main><!-- /main-content -->
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">NAZBOT</div>
+          <p>Automatización · Web 3D · IA Generativa</p>
+        </div>
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <a href="#automatizacion" data-page="automatizacion">Automatización</a>
+          <a href="#web3d" data-page="web3d">Web 3D</a>
+          <a href="#ia-media" data-page="ia-media">IA Generativa</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contacto</h4>
+          <a href="mailto:masegosa2002@gmail.com">masegosa2002@gmail.com</a>
+          <a href="https://wa.me/34659426999" target="_blank" rel="noopener">WhatsApp directo</a>
+          <a href="https://linkedin.com/in/masegosa" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="built-with">
+        <span>Potenciado por</span>
+        <span class="tech-badge">n8n</span>
+        <span class="tech-badge">Claude AI</span>
+        <span class="tech-badge">GSAP</span>
+        <span class="tech-badge">WebGL</span>
+        <span class="tech-badge">Three.js</span>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> NAZBOT. Todos los derechos reservados.</p>
+        <p>Hecho con IA + código + ☕</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- App JS -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
