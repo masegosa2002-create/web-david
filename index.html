@@ -655,6 +655,38 @@
     </div>
   </footer>
 
+  <!-- Chatbot -->
+  <div id="chatbot-container">
+    <button id="chatbot-toggle" aria-label="Abrir asistente IA">
+      <span class="bot-icon">🤖</span>
+    </button>
+    <div id="chatbot-window">
+      <div class="chat-header">
+        <div class="chat-status">
+          <span class="status-dot"></span>
+          <span>NAZIBOT Online</span>
+        </div>
+        <button id="chat-close">×</button>
+      </div>
+      <div id="chat-messages">
+        <div class="message bot">¡Hola! Soy NAZIBOT. ¿En qué puedo ayudarte hoy a escalar tu negocio?</div>
+      </div>
+      <div id="chat-suggestions">
+        <button class="suggestion">¿Qué servicios ofrecéis?</button>
+        <button class="suggestion">¿Cómo ahorro tiempo?</button>
+        <button class="suggestion">Quiero un presupuesto</button>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+        <button id="chat-send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- GSAP CDN -->

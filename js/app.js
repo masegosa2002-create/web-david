@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFooterYear();
   initROICalculator();
   initScrollReveal();
+  initChatbot();
 
   const scrollBtn = document.getElementById('scroll-to-services');
   if (scrollBtn) {
@@ -648,4 +649,105 @@ function initROICalculator() {
 
   [hoursEl, rateEl, hcEl].forEach(el => el.addEventListener('input', calc));
   calc();
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   CHATBOT (NAZIBOT)
+   ══════════════════════════════════════════════════════════ */
+function initChatbot() {
+  const container = document.getElementById('chatbot-container');
+  const toggle = document.getElementById('chatbot-toggle');
+  const windowEl = document.getElementById('chatbot-window');
+  const closeBtn = document.getElementById('chat-close');
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('chat-send');
+  const messagesArea = document.getElementById('chat-messages');
+  const suggestionBtns = document.querySelectorAll('.suggestion');
+
+  if (!container) return;
+
+  let chatHistory = [];
+
+  // Toggle window
+  toggle.addEventListener('click', () => windowEl.classList.toggle('active'));
+  closeBtn.addEventListener('click', () => windowEl.classList.remove('active'));
+
+  // Handle Suggestions
+  suggestionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.textContent;
+      sendMessage(text);
+    });
+  });
+
+  // Handle Input
+  sendBtn.addEventListener('click', () => {
+    if (input.value.trim()) sendMessage(input.value.trim());
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) sendMessage(input.value.trim());
+  });
+
+  async function sendMessage(text) {
+    // Add user message to UI
+    appendMessage('user', text);
+    input.value = '';
+
+    // Show typing indicator
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'typing';
+    typingIndicator.textContent = 'NAZIBOT está pensando...';
+    messagesArea.appendChild(typingIndicator);
+    scrollToBottom();
+
+    // Prepare history for API
+    chatHistory.push({ role: 'user', content: text });
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: chatHistory })
+      });
+
+      const data = await response.json();
+      messagesArea.removeChild(typingIndicator);
+
+      if (data.choices && data.choices[0]) {
+        const botText = data.choices[0].message.content;
+        appendMessage('bot', botText);
+        chatHistory.push({ role: 'assistant', content: botText });
+      } else {
+        appendMessage('bot', 'Lo siento, ha habido un error galáctico. Inténtalo de nuevo en unos segundos.');
+      }
+    } catch (err) {
+      if (typingIndicator.parentNode) messagesArea.removeChild(typingIndicator);
+      appendMessage('bot', 'No puedo conectar con el servidor central ahora mismo. Revisa tu conexión.');
+    }
+  }
+
+  function appendMessage(role, text) {
+    const msg = document.createElement('div');
+    msg.className = `message ${role}`;
+    msg.textContent = text;
+    messagesArea.appendChild(msg);
+    scrollToBottom();
+
+    // If bot message and contains specific triggers, suggest leaving contact
+    if (role === 'bot' && (text.toLowerCase().includes('email') || text.toLowerCase().includes('teléfono') || text.toLowerCase().includes('contacto'))) {
+      // Proactive contact tip
+      const tip = document.createElement('div');
+      tip.className = 'typing';
+      tip.style.color = 'var(--nebula-hot)';
+      tip.textContent = 'Tip: Puedes escribir tu email directamente aquí.';
+      messagesArea.appendChild(tip);
+      scrollToBottom();
+    }
+  }
+
+  function scrollToBottom() {
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+  }
 }
