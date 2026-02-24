@@ -731,7 +731,7 @@ function initChatbot() {
   function appendMessage(role, text) {
     const msg = document.createElement('div');
     msg.className = `message ${role}`;
-    msg.textContent = text;
+    msg.innerHTML = text.replace(/\n/g, '<br>');
     messagesArea.appendChild(msg);
     scrollToBottom();
 
