@@ -121,7 +121,7 @@
 
 
             <div class="service-card gsap-reveal">
-              <div class="card-number">03</div>
+              <div class="card-number">02</div>
               <h3>IA Generativa<br>Imagen &amp; Video</h3>
               <p>Contenido visual profesional. Coste: –95%.</p>
               <ul>
@@ -240,15 +240,12 @@
                 </svg>
               </div>
               <h3>N8N PROTOCOLS</h3>
-              <p>Arquitectura de flujos ciegos. Conectamos tu stack con secuencias de nivel industrial.</p>
-              <div class="n8n-flow-visual">
-                <div class="flow-line"></div>
-                <div class="flow-dots">
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                </div>
-              </div>
+              <p>Conectamos tu stack completo con secuencias automáticas de nivel industrial.</p>
+              <ul class="arch-list">
+                <li>Lead → CRM → WhatsApp</li>
+                <li>Seguimiento automático</li>
+                <li>Cero intervención manual</li>
+              </ul>
             </div>
 
             <div class="arch-card gsap-reveal">
@@ -275,14 +272,15 @@
         <div class="container gsap-reveal">
           <div class="showcase-box">
             <div class="showcase-content">
-              <span>ESTRATEGIA: THE LEAD MACHINE</span>
-              <h2>RECUPERA EL 80% DEL TIEMPO EN SEGUIMIENTOS</h2>
-              <p>No pierdas leads por falta de respuesta. Nuestro sistema detecta la intención de compra y cualifica al
-                usuario antes de que tú abras el chat.</p>
+              <span>ESTRATEGIA: MÁQUINA DE VENTAS</span>
+              <h2>TUS LEADS SE RESPONDEN SOLOS. TÚ SOLO CIERRAS.</h2>
+              <p>Un cliente potencial te escribe. En 3 segundos, la IA analiza si quiere comprar o solo preguntar.
+                Si quiere comprar: le llega un WhatsApp instantáneo. Si no: entra en una secuencia automática que lo
+                convierte.</p>
               <div class="showcase-stats">
-                <div class="stat-item"><strong>99.9%</strong><span>Uptime Sistema</span></div>
-                <div class="stat-item"><strong>-40h</strong><span>Gestionadas / mes</span></div>
-                <div class="stat-item"><strong>2.5x</strong><span>Ventas Cerradas</span></div>
+                <div class="stat-item"><strong>99.9%</strong><span>Disponibilidad</span></div>
+                <div class="stat-item"><strong>40h</strong><span>Ahorradas / mes</span></div>
+                <div class="stat-item"><strong>2.5x</strong><span>Más ventas</span></div>
               </div>
             </div>
             <div class="showcase-visual">
@@ -629,8 +627,41 @@
 
   </main><!-- /main-content -->
 
+  <!-- ═══════════════════════ CONTACT FORM ═══════════════ -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">HABLEMOS</h2>
+      <p class="contact-subtitle">Rellena el formulario y te contactamos en menos de 24h. Sin compromiso.</p>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="contact-name">Nombre</label>
+          <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-phone">Teléfono / WhatsApp</label>
+          <input type="tel" id="contact-phone" name="phone" placeholder="+34 600 000 000" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-service">¿Qué te interesa?</label>
+          <select id="contact-service" name="service">
+            <option value="Automatización">⚡ Automatización de Procesos</option>
+            <option value="IA Generativa">🎨 IA Generativa (Imagen & Video)</option>
+            <option value="Pack Completo">🚀 Pack Completo</option>
+            <option value="Otro">💬 Otro / No estoy seguro</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary btn-form-submit">Enviar solicitud →</button>
+        <p class="form-note">🔒 Tus datos están seguros. No spam. Solo soluciones.</p>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer id="contacto">
+  <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">

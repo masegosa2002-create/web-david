@@ -2382,6 +2382,106 @@ footer {
   margin-bottom: 4px;
 }
 
+/* ── CONTACT FORM ───────────────────────────────────────── */
+.contact-section {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, transparent, rgba(136, 51, 255, 0.03));
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: var(--star-dim);
+  font-size: var(--text-md);
+  margin-bottom: var(--space-xl);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--star-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  color: var(--star-white);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  outline: none;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--nebula-violet);
+  box-shadow: 0 0 20px rgba(136, 51, 255, 0.15);
+}
+
+.form-group input::placeholder {
+  color: var(--star-faint);
+}
+
+.form-group select option {
+  background: #0a0a1a;
+  color: var(--star-white);
+}
+
+.btn-form-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: var(--text-md);
+  text-align: center;
+  margin-top: var(--space-sm);
+  cursor: pointer;
+}
+
+.form-note {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--star-faint);
+  margin-top: var(--space-xs);
+}
+
+.form-success {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--star-white);
+  margin-bottom: var(--space-sm);
+}
+
+.form-success p {
+  color: var(--star-dim);
+  font-size: var(--text-md);
+}
+
 /* ── MOBILE RESPONSIVE ──────────────────────────────────── */
 
 /* --- Tablet landscape (1024px) already handled above --- */

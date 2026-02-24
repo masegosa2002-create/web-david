@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initROICalculator();
   initScrollReveal();
   initChatbot();
+  initContactForm();
 
   const scrollBtn = document.getElementById('scroll-to-services');
   if (scrollBtn) {
@@ -750,4 +751,46 @@ function initChatbot() {
   function scrollToBottom() {
     messagesArea.scrollTop = messagesArea.scrollHeight;
   }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONTACT FORM → WHATSAPP
+   ══════════════════════════════════════════════════════════ */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+    const service = document.getElementById('contact-service').value;
+
+    // Build WhatsApp message
+    const waNumber = '34659426999';
+    const message = `🚀 *NUEVO LEAD — NAZBOT WEB*
+
+👤 *Nombre:* ${name}
+📧 *Email:* ${email}
+📱 *Teléfono:* ${phone}
+⚡ *Servicio:* ${service}
+
+_Enviado desde nazbot.vercel.app_`;
+
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+
+    // Show success message
+    form.innerHTML = `
+      <div class="form-success">
+        <h3>🚀 ¡Solicitud enviada!</h3>
+        <p>Se abrirá WhatsApp para confirmar tu mensaje.<br>Te contactaremos en menos de 24h.</p>
+      </div>
+    `;
+
+    // Open WhatsApp
+    window.open(waUrl, '_blank');
+  });
 }
