@@ -2382,10 +2382,350 @@ footer {
   margin-bottom: 4px;
 }
 
-@media (max-width: 480px) {
+/* ── MOBILE RESPONSIVE ──────────────────────────────────── */
+
+/* --- Tablet landscape (1024px) already handled above --- */
+
+/* --- Tablet portrait / small laptop --- */
+@media (max-width: 900px) {
+  .showcase-box {
+    grid-template-columns: 1fr !important;
+  }
+
+  .showcase-visual {
+    border-left: none;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .studio-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bundles-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Mobile (max 768px) - core mobile experience --- */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --text-hero: clamp(2.8rem, 14vw, 5rem);
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Nav */
+  #main-nav {
+    padding: 0 var(--space-md);
+    height: 56px;
+  }
+
+  body.banner-visible #main-nav {
+    top: 32px;
+  }
+
+  #availability-banner {
+    font-size: 0.65rem;
+    padding: 6px var(--space-sm);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions .btn-primary {
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: calc(100vh - 56px);
+    padding: var(--space-lg) 0;
+  }
+
+  .hero-pre {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-tagline {
+    font-size: var(--text-md);
+    padding: 0 var(--space-xs);
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    letter-spacing: 0.08em;
+  }
+
+  /* Steps */
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .step-item::after {
+    display: none;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Subpage hero */
+  .subpage-hero h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .subpage-tagline {
+    font-size: var(--text-sm);
+  }
+
+  /* ROI Calculator */
+  .roi-calculator {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-result {
+    text-align: center;
+  }
+
+  /* Architecture grid */
+  .auto-arch-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .arch-card-featured {
+    transform: scale(1);
+  }
+
+  /* Showcase */
+  .showcase-box {
+    grid-template-columns: 1fr !important;
+  }
+
+  .showcase-content {
+    padding: var(--space-lg);
+  }
+
+  .showcase-stats {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .flow-diagram {
+    padding: var(--space-md);
+  }
+
+  .flow-row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .pricing-card {
+    max-width: 100%;
+  }
+
+  /* FAQ */
+  .faq-item summary {
+    font-size: var(--text-sm);
+  }
+
+  /* IA Studio */
+  .ia-studio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tech stack */
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .built-with {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Sticky CTA */
+  #sticky-cta {
+    flex-direction: column;
+    bottom: -130px;
+    padding: var(--space-sm);
+  }
+
+  #sticky-cta.visible {
+    bottom: var(--space-sm);
+  }
+
+  /* Bundles */
+  .bundles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Chatbot - fill more space on mobile */
+  #chatbot-container {
+    bottom: var(--space-md);
+    right: var(--space-md);
+  }
+
+  #chatbot-toggle {
+    width: 52px;
+    height: 52px;
+  }
+
   #chatbot-window {
-    width: calc(100vw - 40px);
-    right: -20px;
-    bottom: 70px;
+    width: calc(100vw - 32px);
+    height: 70vh;
+    right: -8px;
+    bottom: 64px;
+    clip-path: none;
+    border-radius: 12px;
+  }
+}
+
+/* --- Small mobile (max 480px) --- */
+@media (max-width: 480px) {
+  :root {
+    --text-hero: clamp(2.2rem, 16vw, 3.5rem);
+    --space-lg: 1.5rem;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  #main-nav {
+    padding: 0 var(--space-sm);
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  .nav-actions .btn-primary {
+    font-size: 0.55rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Hero */
+  .hero-tagline {
+    font-size: var(--text-sm);
+  }
+
+  /* Service cards */
+  .service-card {
+    padding: var(--space-md);
+  }
+
+  /* Pricing */
+  .pricing-card {
+    padding: var(--space-md);
+  }
+
+  .plan-price {
+    font-size: 1.2rem;
+  }
+
+  /* Testimonials */
+  .testimonial {
+    padding: var(--space-md);
+  }
+
+  /* Tech stack smaller */
+  .tech-stack-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  /* Chatbot - full width on small phones */
+  #chatbot-container {
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+  }
+
+  #chatbot-window {
+    width: calc(100vw - 20px);
+    height: 75vh;
+    right: -6px;
+    bottom: 60px;
+  }
+
+  #chatbot-toggle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .bot-icon {
+    font-size: 1.2rem;
+  }
+
+  .chat-header {
+    padding: var(--space-sm);
+  }
+
+  #chat-messages {
+    padding: var(--space-sm);
+  }
+
+  .message {
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .chat-input-area {
+    padding: var(--space-sm);
   }
 }
